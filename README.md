@@ -1,26 +1,24 @@
 <!--
   Profile: heggria/heggria
-  Kernel: work should compound — past the chat.
+  Rule: evidence first, philosophy second. Every number here must be checkable.
 -->
 
 <div align="center">
 
-<img
-  src="assets/compound.svg"
-  alt="chat → traces → trust → next decision → compound"
-  width="720"
-/>
-
 # Heggria
 
-### Work that compounds — not chat that evaporates.
+### I make agent runs verifiable, replayable, and incremental.
 
-Engineer · writer · Beijing  
-I build systems and notes so judgment can earn interest over time.
+Agent infrastructure · [@minimax](https://github.com/minimax) · Beijing
 
-<br/>
+[![taskflow](https://img.shields.io/npm/v/pi-taskflow?style=flat-square&color=7775FF&label=taskflow)](https://www.npmjs.com/package/pi-taskflow)
+[![installs](https://img.shields.io/npm/dm/pi-taskflow?style=flat-square&color=1f6feb&label=installs%2Fmo)](https://www.npmjs.com/package/pi-taskflow)
+[![stars](https://img.shields.io/github/stars/heggria/taskflow?style=flat-square&color=444&label=stars)](https://github.com/heggria/taskflow/stargazers)
+[![hermit](https://img.shields.io/pypi/v/hermit-agent?style=flat-square&color=3776AB&label=hermit)](https://pypi.org/project/hermit-agent/)
 
-[`website`](https://heggria.github.io/)
+[`taskflow`](https://github.com/heggria/taskflow)
+&nbsp;·&nbsp;
+[`docs`](https://heggria.github.io/taskflow/)
 &nbsp;·&nbsp;
 [`writing`](https://heggria.github.io/writing/)
 &nbsp;·&nbsp;
@@ -32,142 +30,127 @@ I build systems and notes so judgment can earn interest over time.
 
 ---
 
-## Why compounding
+## A run that stopped before paying for the expensive part
 
-Getting something to run once is only principal.  
-**Real completion leaves interest for the next time.**
+Real output from a Pi run — not a mock dashboard:
 
-Chat is excellent at momentum — the cursor moves, answers appear, branches multiply.  
-Momentum evaporates. Two weeks later, *why* the fifteenth revision happened is buried under the first fourteen.
+```text
+⊗ taskflow self-improve  6/7 · blocked · $0.095
+    ✓ discover            agent   deepseek-v4-flash  10t ↑38k ↓6.7k $0.011
+  ┌ ✓ write-runner-tests  agent   claude-sonnet-4-6  10t ↑13  ↓6.6k $0.020
+  ├ ✓ write-store-tests   agent   claude-sonnet-4-6  10t ↑11  ↓10k  $0.018
+  ├ ✓ write-agents-tests  agent   claude-sonnet-4-6  10t ↑28  ↓13k  $0.030
+  └ ✓ fix-stability       agent   claude-sonnet-4-6  10t ↑13  ↓3.9k $0.012
+    ✓ verify              gate    BLOCK 3 type errors in test files
+    ⊘ report              reduce  skipped · Gate blocked  ↳ fix-stability
+```
 
-I care about a different kind of output:
+The layout **is** the DAG: parallel rails are concurrency, long edges are dependencies,
+and the gate states why downstream work stopped. No separate control plane needed to read it.
 
-| What you leave | Why it compounds |
-| --- | --- |
-| **Contracts** | What “done” means — so the next pass doesn’t re-guess the goal |
-| **Boundaries** | Power that is visible, limited, recoverable — trust you can tune, not prepay |
-| **Evidence** | What actually happened — so responsibility still stands after the action |
-| **Next steps** | Where uncertainty remains — an honest starting point, not a fake summary |
-
-> The interface that creates the work should not be the only place that can understand it.
-
-This is not “personal growth compound interest.”  
-It’s engineering: **traces, trust, judgment — every careful leave-behind makes the next decision cheaper.**
+Nine operations answer questions about a graph for **zero model calls** —
+`plan` · `verify` · `compile` · `lint` · `ir` · `trace` · `replay` · `why-stale` · `analytics`.
+You can price a run before spending on it, and re-ask what happened after it ends.
 
 ---
 
 ## Now building
 
-Ideas under real resistance. Projects are not the whole identity — they are where the philosophy meets friction.
+### [taskflow](https://github.com/heggria/taskflow) — the compounding layer for multi-agent work
 
-<table>
-  <tr>
-    <td width="50%" valign="top">
-      <h3><a href="https://github.com/heggria/taskflow">taskflow</a></h3>
-      <p>
-        <strong>The compounding layer for multi-agent work.</strong><br/>
-        Declarative DAGs · static verify · isolated execution · resume / replay / incremental recompute.<br/>
-        Runs on Pi · Codex · Claude Code · OpenCode · Grok.
-      </p>
-      <p>
-        <code>verify before spend</code>
-        ·
-        <code>replay without tokens</code>
-        ·
-        <code>recompute the stale frontier</code>
-      </p>
-      <p>
-        <a href="https://github.com/heggria/taskflow">
-          <img alt="taskflow stars" src="https://img.shields.io/github/stars/heggria/taskflow?style=flat&label=stars&labelColor=0d1117&color=238636" />
-        </a>
-      </p>
-    </td>
-    <td width="50%" valign="top">
-      <h3><a href="https://pypi.org/project/hermit-agent/">Hermit</a></h3>
-      <p>
-        <strong>A governed local kernel for long-running work.</strong><br/>
-        Permissions with shape · actions you can audit · failures you can recover from.<br/>
-        Agents that remain legible after the run.
-      </p>
-      <p>
-        <code>visible power</code>
-        ·
-        <code>bounded action</code>
-        ·
-        <code>recoverable failure</code>
-      </p>
-      <p>
-        <a href="https://pypi.org/project/hermit-agent/">
-          <img alt="hermit-agent on PyPI" src="https://img.shields.io/pypi/v/hermit-agent?style=flat&label=pypi&labelColor=0d1117&color=238636" />
-        </a>
-      </p>
-    </td>
-  </tr>
-  <tr>
-    <td width="50%" valign="top">
-      <h3><a href="https://github.com/heggria/home-compass">Home Compass</a></h3>
-      <p>
-        Housing choices under <strong>real constraints</strong>, made explainable —<br/>
-        “can afford on paper” ≠ “comfortable to live with.”
-      </p>
-    </td>
-    <td width="50%" valign="top">
-      <h3><a href="https://heggria.github.io/selffield/">SelfField</a></h3>
-      <p>
-        A <strong>living personal mirror</strong> grown from experience and tension —<br/>
-        evidence, friction, context; no personality labels.
-      </p>
-    </td>
-  </tr>
-</table>
-
----
-
-## Writing that compounds
-
-Public notes on why constraints improve decisions, why evidence matters, and how software can explain itself.
+Declarative DAGs, statically verified, executed in isolated subagents,
+resumable across sessions, replayable without tokens, recomputed from the smallest stale frontier.
 
 | | |
-| --- | --- |
-| **[Work should outlive chat](https://heggria.github.io/writing/work-should-outlive-chat/)** | Chat makes momentum; artifacts make continuity. Done is a claim about the future. |
-| **[Trust comes from boundaries](https://heggria.github.io/writing/trust-comes-from-boundaries/)** | Not because a system promises good behavior — because power is visible, limited, recoverable. |
-| **[Small tools, sharp edges](https://heggria.github.io/writing/small-tools-sharp-edges/)** | Focus is not missing features. A tool gets character when its omissions are as deliberate as its capabilities. |
+|---|---|
+| **Runs on** | Pi · Codex · Claude Code · OpenCode · Grok Build |
+| **Surface** | 12 phase types · 18 built-in agents · 19 MCP tools · TypeScript DSL → portable JSON |
+| **Compiled identity** | FlowIR + content hash → provenance, stale analysis, cross-run cache |
+| **Proof** | 1,500+ tests · 9 published packages · MIT · CI on `main` + every PR |
+| **Adoption** | ~3.3k npm installs / month |
 
-More → [heggria.github.io/writing](https://heggria.github.io/writing/)
+```text
+verify before spend  ·  replay without tokens  ·  recompute the stale frontier
+```
+
+[repo](https://github.com/heggria/taskflow) · [docs](https://heggria.github.io/taskflow/) · [examples](https://github.com/heggria/taskflow/tree/main/examples) · [changelog](https://github.com/heggria/taskflow/blob/main/CHANGELOG.md)
+
+### [Hermit](https://pypi.org/project/hermit-agent/) — a governed local kernel for long-running work
+
+Permissions with shape, actions you can audit, failures you can recover from.
+Agents that stay legible after the run ends.
+
+`pip install hermit-agent` — MIT, installable and auditable at runtime.
+**Source is still private** while the permission model is moving; opening it is on the list below.
+I'd rather say that plainly than link to a repo you can't read.
 
 ---
 
-## Operating principles
+## What's next
 
-Not a slogan wall. Rulers I actually use when choosing.
+Following me is a subscription, so here is what it buys.
 
+| Status | What |
+|---|---|
+| 🚧 in progress | **taskflow 0.3.0 — Trusted Effects.** Declared side effects with confidentiality/integrity labels; filesystem writes promoted only through `snapshot → stage → verify → commit`. `whyAuthorized` / `whyEffect` explain any write after the fact. Branch: `feat/0.3.0-trusted-effects`. |
+| 🚧 in progress | **Honest host baseline.** A published conformance matrix of what each of the five hosts actually supports — no capability claimed that isn't tested. |
+| ⏭ next | **Open Hermit's source**, or publish the reason it stays closed. No third option. |
+| ⏭ next | **Write up incremental recompute for agent graphs** — what Bazel/Nix/Salsa get right, and what breaks when the "build steps" are nondeterministic. |
+
+Watch [taskflow releases](https://github.com/heggria/taskflow/releases) for the shipping version of this list.
+
+---
+
+## Why I build it this way
+
+<div align="center">
+<img src="assets/compound.svg" alt="chat → traces → trust → next decision, looping back as compound interest" width="680" />
+</div>
+
+Getting something to run once is only principal. Real completion leaves interest:
+a contract for what *done* meant, evidence of what actually happened, and an honest note
+about where uncertainty remains. Chat is excellent at momentum, and momentum evaporates —
+two weeks later, *why* the fifteenth revision happened is buried under the first fourteen.
+
+So I put the compounding part in artifacts instead of transcripts:
+**the interface that creates the work should not be the only place that can understand it.**
+
+Two rulers I actually use when choosing:
+
+```text
+01  Evidence outlives confidence.
+02  Constraints give a tool its character — omissions as deliberate as features.
 ```
-01  Clarity is a feature.
-02  Constraints give a tool its character.
-03  Evidence outlives confidence.
-04  A real finish is principal for the future.
-05  Boundaries make measured trust possible.
-```
+
+More: [Work should outlive chat](https://heggria.github.io/writing/work-should-outlive-chat/) ·
+[Trust comes from boundaries](https://heggria.github.io/writing/trust-comes-from-boundaries/) ·
+[Small tools, sharp edges](https://heggria.github.io/writing/small-tools-sharp-edges/)
+
+---
+
+## Labs
+
+Smaller things, kept honest about their stage — ideas meeting friction, not products.
+
+- **[home-compass](https://github.com/heggria/home-compass)** — Beijing housing scorecards where "affordable on paper" ≠ "comfortable to live with."
+- **[selffield](https://heggria.github.io/selffield/)** — a personal mirror grown from evidence and tension, with no personality labels.
+- **cli-lab** — a consolidated monorepo for local CLI experiments; older standalone snapshots are archived, not maintained.
 
 ---
 
 ## About
 
-I work at **MiniMax** in Beijing, between agent infrastructure and full-stack products.  
-Day languages: TypeScript · Python · Node.js · Vue — but the language I care about most is the one between **a system and the person trying to understand it**.
+I work at MiniMax in Beijing, between agent infrastructure and full-stack products.
+Day languages: TypeScript · Python · Node.js · Vue — but the language I care about most is
+the one between a system and the person trying to understand it.
 
-Engineering is practice; writing is necessity.  
-What’s here is public evidence: tools, notes, and decisions made under real constraints.
-
-Full picture → **[heggria.github.io](https://heggria.github.io/)**
-
----
+Engineering is practice; writing is necessity. Everything here is public evidence, or labeled as not yet.
 
 <div align="center">
 
 <sub>
-Once is not enough · make the next time cheaper<br/>
-<em>Leave traces that earn interest.</em>
+Follow if you work on agent orchestration, incremental computation, or making runs auditable.<br/>
+<em>Once is not enough — make the next time cheaper.</em>
 </sub>
 
 </div>
