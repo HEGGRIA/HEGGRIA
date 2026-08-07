@@ -14,7 +14,7 @@ Agent infrastructure · [@minimax](https://github.com/minimax) · Beijing
 [![taskflow](https://img.shields.io/npm/v/pi-taskflow?style=flat-square&color=7775FF&label=taskflow)](https://www.npmjs.com/package/pi-taskflow)
 [![installs](https://img.shields.io/npm/dm/pi-taskflow?style=flat-square&color=1f6feb&label=installs%2Fmo)](https://www.npmjs.com/package/pi-taskflow)
 [![stars](https://img.shields.io/github/stars/heggria/taskflow?style=flat-square&color=444&label=stars)](https://github.com/heggria/taskflow/stargazers)
-[![hermit](https://img.shields.io/pypi/v/hermit-agent?style=flat-square&color=3776AB&label=hermit)](https://pypi.org/project/hermit-agent/)
+[![tests](https://img.shields.io/badge/tests-1%2C500%2B-3fb950?style=flat-square)](https://github.com/heggria/taskflow/tree/main/packages)
 
 [`taskflow`](https://github.com/heggria/taskflow)
 &nbsp;·&nbsp;
@@ -54,10 +54,9 @@ You can price a run before spending on it, and re-ask what happened after it end
 
 ---
 
-## Now building
+## Now building — [taskflow](https://github.com/heggria/taskflow)
 
-### [taskflow](https://github.com/heggria/taskflow) — the compounding layer for multi-agent work
-
+**The compounding layer for multi-agent work.**
 Declarative DAGs, statically verified, executed in isolated subagents,
 resumable across sessions, replayable without tokens, recomputed from the smallest stale frontier.
 
@@ -75,14 +74,7 @@ verify before spend  ·  replay without tokens  ·  recompute the stale frontier
 
 [repo](https://github.com/heggria/taskflow) · [docs](https://heggria.github.io/taskflow/) · [examples](https://github.com/heggria/taskflow/tree/main/examples) · [changelog](https://github.com/heggria/taskflow/blob/main/CHANGELOG.md)
 
-### [Hermit](https://pypi.org/project/hermit-agent/) — a governed local kernel for long-running work
-
-Permissions with shape, actions you can audit, failures you can recover from.
-Agents that stay legible after the run ends.
-
-`pip install hermit-agent` — MIT, installable and auditable at runtime.
-**Source is still private** while the permission model is moving; opening it is on the list below.
-I'd rather say that plainly than link to a repo you can't read.
+One project, gone deep. Everything below is smaller by design.
 
 ---
 
@@ -94,7 +86,6 @@ Following me is a subscription, so here is what it buys.
 |---|---|
 | 🚧 in progress | **taskflow 0.3.0 — Trusted Effects.** Declared side effects with confidentiality/integrity labels; filesystem writes promoted only through `snapshot → stage → verify → commit`. `whyAuthorized` / `whyEffect` explain any write after the fact. Branch: `feat/0.3.0-trusted-effects`. |
 | 🚧 in progress | **Honest host baseline.** A published conformance matrix of what each of the five hosts actually supports — no capability claimed that isn't tested. |
-| ⏭ next | **Open Hermit's source**, or publish the reason it stays closed. No third option. |
 | ⏭ next | **Write up incremental recompute for agent graphs** — what Bazel/Nix/Salsa get right, and what breaks when the "build steps" are nondeterministic. |
 
 Watch [taskflow releases](https://github.com/heggria/taskflow/releases) for the shipping version of this list.
@@ -128,13 +119,14 @@ More: [Work should outlive chat](https://heggria.github.io/writing/work-should-o
 
 ---
 
-## Labs
+## Personal tools & labs
 
-Smaller things, kept honest about their stage — ideas meeting friction, not products.
+Things I built for myself. Listed because they're where the ideas got tested first — not as products, and not all of them public.
 
+- **Hermit** *(private, personal daily driver)* — a governed local kernel for long-running work: permissions with shape, receipts for what happened, recovery after failure. It's how I found out which parts of "bounded authority" survive contact with my own impatience; taskflow's gates and effect model owe it a lot. Built for one user, so the source stays closed by choice — not a product, and not a stalled open-source plan.
 - **[home-compass](https://github.com/heggria/home-compass)** — Beijing housing scorecards where "affordable on paper" ≠ "comfortable to live with."
 - **[selffield](https://heggria.github.io/selffield/)** — a personal mirror grown from evidence and tension, with no personality labels.
-- **cli-lab** *(private)* — local CLI experiments consolidated into one monorepo. The standalone snapshots you'll find in my repo list are the archived predecessors: kept for history, not maintained.
+- **cli-lab** *(private)* — local CLI experiments consolidated into one monorepo. The standalone snapshots in my repo list are the archived predecessors: kept for history, not maintained.
 
 ---
 
@@ -144,7 +136,8 @@ I work at MiniMax in Beijing, between agent infrastructure and full-stack produc
 Day languages: TypeScript · Python · Node.js · Vue — but the language I care about most is
 the one between a system and the person trying to understand it.
 
-Engineering is practice; writing is necessity. Everything here is public evidence, or labeled as not yet.
+Engineering is practice; writing is necessity. What I ship publicly, I back with evidence;
+what I keep private, I say is private.
 
 <div align="center">
 
