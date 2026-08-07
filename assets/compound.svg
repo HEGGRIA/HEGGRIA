@@ -29,5 +29,5 @@
         stroke="#3fb950" stroke-width="1.5" fill="none" stroke-linecap="round"/>
   <polygon points="72,48 64,43 64,53" fill="#3fb950"/>
 
-  <text x="360" y="108" text-anchor="middle" fill="#8b949e" font-family="ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace" font-size="10" font-weight="600" letter-spacing="1.5">COMPOUND · 复利</text>
+  <text x="360" y="108" text-anchor="middle" fill="#8b949e" font-family="ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace" font-size="10" font-weight="600" letter-spacing="1.5">COMPOUND INTEREST</text>
 </svg>
