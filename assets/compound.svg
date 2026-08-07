@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="120" viewBox="0 0 720 120" fill="none" role="img" aria-label="chat to traces to trust to next decision, compounding">
+  <title>Work that compounds</title>
+  <!-- GitHub README: keep paints inline (no external CSS) -->
+  <rect x="0.5" y="0.5" width="719" height="119" rx="14" fill="#0d1117" stroke="#21262d" stroke-width="1"/>
+
+  <!-- spine -->
+  <line x1="72" y1="48" x2="600" y2="48" stroke="#30363d" stroke-width="1.5"/>
+
+  <!-- nodes: chat / traces / trust / next -->
+  <g>
+    <circle cx="88" cy="48" r="5" fill="#3fb950"/>
+    <text x="88" y="74" text-anchor="middle" fill="#e6edf3" font-family="ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace" font-size="12" font-weight="600">chat</text>
+  </g>
+  <g>
+    <circle cx="248" cy="48" r="5" fill="#3fb950"/>
+    <text x="248" y="74" text-anchor="middle" fill="#e6edf3" font-family="ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace" font-size="12" font-weight="600">traces</text>
+  </g>
+  <g>
+    <circle cx="408" cy="48" r="5" fill="#3fb950"/>
+    <text x="408" y="74" text-anchor="middle" fill="#e6edf3" font-family="ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace" font-size="12" font-weight="600">trust</text>
+  </g>
+  <g>
+    <circle cx="580" cy="48" r="5" fill="#3fb950"/>
+    <text x="580" y="74" text-anchor="middle" fill="#e6edf3" font-family="ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace" font-size="12" font-weight="600">next decision</text>
+  </g>
+
+  <!-- compound return -->
+  <path d="M580 48 C640 48 670 48 680 62 C690 78 660 92 580 96 C400 104 200 104 88 96 C40 92 36 72 36 56 C36 50 48 48 72 48"
+        stroke="#3fb950" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+  <polygon points="72,48 64,43 64,53" fill="#3fb950"/>
+
+  <text x="360" y="108" text-anchor="middle" fill="#8b949e" font-family="ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace" font-size="10" font-weight="600" letter-spacing="1.5">COMPOUND · 复利</text>
+</svg>
