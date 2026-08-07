@@ -134,7 +134,7 @@ Smaller things, kept honest about their stage — ideas meeting friction, not pr
 
 - **[home-compass](https://github.com/heggria/home-compass)** — Beijing housing scorecards where "affordable on paper" ≠ "comfortable to live with."
 - **[selffield](https://heggria.github.io/selffield/)** — a personal mirror grown from evidence and tension, with no personality labels.
-- **cli-lab** — a consolidated monorepo for local CLI experiments; older standalone snapshots are archived, not maintained.
+- **cli-lab** *(private)* — local CLI experiments consolidated into one monorepo. The standalone snapshots you'll find in my repo list are the archived predecessors: kept for history, not maintained.
 
 ---
 
